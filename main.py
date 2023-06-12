@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from typing import List
 from uuid import UUID
-from models import UserInfo, UpdateUserInfo, Birthday, check_Birthday
+from models import UserInfo, UpdateUserInfo, check_Birthday
 import datetime
 
 
@@ -15,7 +15,7 @@ db: List[UserInfo] = []
 def fetch_all_users():
     return db
 
-@app.get("/facebook.com/{username}")
+@app.get("/api/v1/{username}")
 def fetch_users(username: str):
     for user in db: 
         if user.username == username:
@@ -38,7 +38,7 @@ def create_acc(user: UserInfo):
 
 
 
-@app.put("/facebook.com/{user_id}")
+@app.put("/api/v1/{user_id}/edit")
 def edit_info(update_user: UpdateUserInfo, user_id: UUID):
     for user in db:
         if user.id == user_id:
@@ -63,7 +63,7 @@ def edit_info(update_user: UpdateUserInfo, user_id: UUID):
         )
 
 
-@app.delete("/facebook.com/{user_id}")
+@app.delete("/api/v1/{user_id}/delete")
 def delete_user(user_id: UUID):
     for user in db:
         if user.id == user_id:

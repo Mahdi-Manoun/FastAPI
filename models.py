@@ -33,30 +33,38 @@ class UpdateUserInfo(BaseModel):
 
 
 def check_Birthday(birthdate: Birthday):
-    current_year = datetime.datetime.now().year
+    current_date = datetime.date.today()
+    date_of_birth = datetime.date(birthdate.year, birthdate.month, birthdate.day)
 
-    if birthdate.year < 1940 or birthdate.year > current_year:
+    if birthdate.year < 1940 or birthdate.year > current_date.year:
         raise HTTPException(
             status_code=400,
             detail="Enter a valid year"
         )
-
-    if birthdate.year > current_year - 18:
+    elif birthdate.year > current_date.year - 18:
         raise HTTPException(
             status_code=400,
             detail="Your age is less than 18"
         )
-
-    if birthdate.month < 1 or birthdate.month > 12:
+    elif birthdate.month < 1 or birthdate.month > 12:
         raise HTTPException(
             status_code=400,
             detail="Enter a valid month"
         )
-
-    if birthdate.day < 1 or birthdate.day > 31:
+    elif birthdate.day < 1 or birthdate.day > 31:
         raise HTTPException(
             status_code=400,
             detail="Enter a valid day"
         )
+    elif any(component is None for component in [birthdate.year, birthdate.month, birthdate.day]):
+        raise HTTPException(
+            status_code=400,
+            detail="Please, enter your date of birth"
+        )
+    else:
+        age = current_date - date_of_birth
+        age_in_years = age.days / 365
+        return round(age_in_years, 2)
+
 
 
