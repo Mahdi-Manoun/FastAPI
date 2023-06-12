@@ -1,22 +1,22 @@
 # Project Name and Description
 
-**Project Name**: [Facebook Create Account.]
+**Project Name**: Facebook Create Account.
 
 **Description**:  
-[My project is about the system of creating Facebook accounts.]
+My project is about the system of creating Facebook accounts.
 
 ## Installation
 
-### • [Install The FastAPI Package By The Following Commands: ]
+### • Install The FastAPI Package By The Following Commands: 
 1. pip install fastapi
 #### Then:
 2. pip install "uvicorn[standard]"
 
 ## Usage
 
-1- [Open your terminal (or cmd) on your file directory project.]
-2- [Enter this command `uvicorn main:app --reload`.]
-3- [Now go to this server: `http://127.0.0.1:8000/docs` to try this project]
+1- Open your terminal (or cmd) on your file directory project.
+2- Enter this command `uvicorn main:app --reload`.
+3- Now go to this server: `http://127.0.0.1:8000/docs` to try this project
 
 ## Development and Contributing
 
