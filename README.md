@@ -1,47 +1,30 @@
 # Project Name and Description
 
-**Project Name**: [Your Project Name]
+**Project Name**: [Facebook Create Account.]
 
 **Description**:  
-[Provide a clear and concise description of your project and its purpose.]
+[My project is about the system of creating Facebook accounts.]
 
 ## Installation
 
-1. [Outline the steps required to set up and install your project.]
-2. [Include any prerequisites or dependencies that need to be installed.]
-3. [Provide clear instructions for installing FastAPI and any other required libraries.]
+### • [Install The FastAPI Package By The Following Commands: ]
+1. pip install fastapi
+#### Then:
+2. pip install "uvicorn[standard]"
 
 ## Usage
 
-- [Describe how to run and use your FastAPI project.]
-- [Specify any command-line arguments or environment variables that need to be set.]
-- [Provide examples of API endpoints and how to interact with them.]
-- [Include any additional information or considerations for users.]
-
-## Configuration
-
-- [Explain how to configure your FastAPI project.]
-- [Mention any configuration files or environment variables that need to be set.]
-- [If applicable, describe any external services or databases that need to be configured.]
+1- [Open your terminal (or cmd) on your file directory project.]
+2- [Enter this command `uvicorn main:app --reload`.]
+3- [Now go to this server: `http://127.0.0.1:8000/docs` to try this project]
 
 ## Development and Contributing
 
-- [Provide instructions for developers who want to contribute to your project.]
-- [Explain how to set up a development environment.]
-- [Describe the process for submitting bug reports, feature requests, or pull requests.]
-- [Include any coding conventions or guidelines that contributors should follow.]
-
-## Deployment
-
-- [If applicable, discuss how to deploy your FastAPI project to a production environment.]
-- [Include any specific instructions for different deployment platforms or services.]
-- [Mention any additional considerations for scaling or monitoring your project.]
-
-## License
-
-[Specify the license under which your project is released.]
-[Include any necessary disclaimers or legal information.]
+If there are any errors or problems in the project please leave a comment and I will respond!
 
 ## Contact Information
 
-[Provide your contact information or a way for users to reach out with questions or feedback.]
+You can contact me on my LinkedIn account: https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BqE5DlhPxQX%2BG%2FkAO2C1cow%3D%3D
+
+### My GitHub Profile:
+https://github.com/MahdiMannoun
