@@ -26,6 +26,6 @@ If there are any errors or problems in the project please leave a comment and I 
 
 You can contact me on my LinkedIn account: https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BqE5DlhPxQX%2BG%2FkAO2C1cow%3D%3D
 
-## My GitHub Profile:
+## My GitHub Profile
 
 https://github.com/MahdiMannoun
