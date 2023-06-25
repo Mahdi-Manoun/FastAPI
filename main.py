@@ -15,14 +15,14 @@ db: List[UserInfo] = []
 def fetch_all_users():
     return db
 
-@app.get("/api/v1/{username}")
-def fetch_users(username: str):
+@app.get("/api/v1/{user_id}")
+def fetch_users(user_id: UUID):
     for user in db: 
-        if user.username == username:
+        if user.id == user_id:
             return user
         raise HTTPException(
             status_code=404,
-            detail=f"{username} not found"
+            detail=f"{user_id} not found"
         )
 
 @app.post("/api/auth/sign_up")
@@ -37,29 +37,18 @@ def create_acc(user: UserInfo):
 
 
 
-
 @app.put("/api/v1/{user_id}/edit")
-def edit_info(update_user: UpdateUserInfo, user_id: UUID):
-    for user in db:
-        if user.id == user_id:
-            if user.first_name != update_user.first_name:
-                user.first_name = update_user.first_name
-            if user.last_name != update_user.last_name:
-                user.last_name = update_user.last_name
-            if user.username != update_user.username:
-                user.username = update_user.username
-            if user.surname != update_user.surname:
-                user.surname = update_user.surname
-            if user.birthdate != update_user.birthdate:
-                user.birthdate = update_user.birthdate
-            if user.email != update_user.email:
-                user.email = update_user.email
-            if user.password != update_user.password:
-                user.password = update_user.password
-            return "Edited"
+def edit_info(user_id: UUID, update_user: UpdateUserInfo):
+    user = next((u for u in db if u.id == user_id), None)
+    if user:
+        updated_fields = update_user.dict(exclude_unset=True)
+        for field, value in updated_fields.items():
+            setattr(user, field, value)
+        return "Edited"
+    else:
         raise HTTPException(
             status_code=404,
-            detail=f"User with id: {user_id} does not found."
+            detail=f"User with id: {user_id} not found."
         )
 
 
